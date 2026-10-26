@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CODE ALPHA STUDIO - A modern, cinematic interactive image gallery showcasing curated photography across Nature, Architecture, Technology, Portraits, and Travel.">
+  <meta name="keywords"
+    content="photography, image gallery, portfolio, responsive gallery, visual art, lightbox, interactive, CODE ALPHA STUDIO">
+  <meta name="author" content="CODE ALPHA STUDIO">
+  <meta name="theme-color" content="#0a0c14">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CODE ALPHA STUDIO — Next-Gen Interactive Image Gallery">
+  <meta property="og:description"
+    content="Explore extraordinary moments, breathtaking landscapes, and creative perspectives through a curated visual experience.">
+
+  <title>CODE ALPHA STUDIO — Next-Gen Interactive Image Gallery</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Ambient Background Canvas Elements -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="CODE ALPHA STUDIO Homepage">
+        <span class="logo-symbol">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </span>
+        <span class="brand-name">CODE ALPHA STUDIO<span class="accent-dot">.</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active" id="navHome">Home</a></li>
+          <li><a href="#gallery" class="nav-link" id="navGallery">Gallery</a></li>
+          <li><a href="#collections" class="nav-link" id="navCollections">Collections</a></li>
+          <li><a href="#about" class="nav-link" id="navAbout">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="favorites-pill-btn" id="headerFavoritesBtn" title="View Liked Photos"
+          aria-label="View Liked Photos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+          <span class="fav-count-badge" id="headerFavCount">0</span>
+        </button>
+
+        <a href="#gallery" class="btn btn-sm btn-primary header-cta-btn">Explore</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="mainNav">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Curated Visual Showcase 2026</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Every Image <span class="gradient-text">Tells a Story</span>.
+          </h1>
+
+          <p class="hero-subtitle">
+            Explore extraordinary moments, breathtaking landscapes, and creative perspectives through a curated visual
+            experience.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#gallery" class="btn btn-primary" id="heroExploreBtn">
+              <span>Explore Gallery</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#collections" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Featured Works</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span class="highlight-number">4K+</span>
+              <span class="highlight-label">Ultra Resolution</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">100%</span>
+              <span class="highlight-label">Curated Selection</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">6</span>
+              <span class="highlight-label">Exclusive Themes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-wrapper" id="heroCardWrapper">
+            <div class="hero-image-frame">
+              <img src="HERO PIC.png"
+                alt="CODE ALPHA STUDIO Lead Developer Portrait" class="hero-img"
+                id="heroPreviewImg">
+              <div class="hero-overlay"></div>
+
+              <!-- Floating Glass Badges -->
+              <div class="floating-badge badge-top-right">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-caption">Creative Engineer</span>
+              </div>
+
+              <div class="floating-badge badge-bottom-left">
+                <div class="photographer-avatar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="photographer-meta">
+                  <span class="badge-name">Lead Developer</span>
+                  <span class="badge-author">CODE ALPHA STUDIO</span>
+                </div>
+              </div>
+
+              <!-- Quick View Trigger on Hero -->
+              <button class="hero-quick-view-btn" id="heroQuickViewBtn" aria-label="Open Featured Photo in Lightbox" title="View Fullscreen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M9 21H3v-6"></path>
+                  <path d="M21 3l-7 7"></path>
+                  <path d="M3 21l7-7"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="hero-card-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <a href="#gallery" aria-label="Scroll to Gallery">
+          <span class="mouse-icon">
+            <span class="wheel"></span>
+          </span>
+          <span class="scroll-text">Scroll Down</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-tag">Visual Archives</div>
+          <h2 class="section-title">Curated Gallery</h2>
+          <p class="section-subtitle">
+            Filter through our hand-picked visual collections or search for distinct styles and perspectives.
+          </p>
+        </div>
+
+        <!-- Controls Toolbar: Filters, Search, Layout Switcher -->
+        <div class="gallery-controls-bar">
+          <!-- Category Filters -->
+          <div class="category-filters" role="tablist" aria-label="Gallery category filters">
+            <button class="filter-btn active" data-category="all" role="tab" aria-selected="true" id="filterAll">
+              <span class="btn-text">All</span>
+              <span class="count-pill" id="countAll">0</span>
+            </button>
+            <button class="filter-btn" data-category="nature" role="tab" aria-selected="false" id="filterNature">
+              <span class="btn-text">Nature</span>
+              <span class="count-pill" id="countNature">0</span>
+            </button>
+            <button class="filter-btn" data-category="architecture" role="tab" aria-selected="false"
+              id="filterArchitecture">
+              <span class="btn-text">Architecture</span>
+              <span class="count-pill" id="countArchitecture">0</span>
+            </button>
+            <button class="filter-btn" data-category="technology" role="tab" aria-selected="false"
+              id="filterTechnology">
+              <span class="btn-text">Technology</span>
+              <span class="count-pill" id="countTechnology">0</span>
+            </button>
+            <button class="filter-btn" data-category="portraits" role="tab" aria-selected="false" id="filterPortraits">
+              <span class="btn-text">Portraits</span>
+              <span class="count-pill" id="countPortraits">0</span>
+            </button>
+            <button class="filter-btn" data-category="travel" role="tab" aria-selected="false" id="filterTravel">
+              <span class="btn-text">Travel</span>
+              <span class="count-pill" id="countTravel">0</span>
+            </button>
+            <button class="filter-btn filter-favorites" data-category="favorites" role="tab" aria-selected="false"
+              id="filterFavorites" title="View Liked Photos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+              <span class="btn-text">Favorites</span>
+              <span class="count-pill" id="countFavorites">0</span>
+            </button>
+          </div>
+
+          <!-- Secondary Toolbar: Search and Grid Toggle -->
+          <div class="gallery-secondary-toolbar">
+            <!-- Search Bar -->
+            <div class="gallery-search-box">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="gallerySearchInput" class="gallery-search-input"
+                placeholder="Search by title, location or tag..." aria-label="Search gallery images">
+              <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear search" title="Clear search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Layout Switcher -->
+            <div class="layout-toggle-group" role="group" aria-label="Layout view mode">
+              <button class="layout-btn active" data-layout="masonry" id="layoutMasonryBtn" title="Masonry View"
+                aria-label="Masonry layout view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="11"></rect>
+                  <rect x="14" y="3" width="7" height="6"></rect>
+                  <rect x="14" y="12" width="7" height="9"></rect>
+                  <rect x="3" y="17" width="7" height="4"></rect>
+                </svg>
+              </button>
+              <button class="layout-btn" data-layout="grid" id="layoutGridBtn" title="Uniform Grid View"
+                aria-label="Uniform grid layout view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button class="layout-btn" data-layout="compact" id="layoutCompactBtn" title="Compact 4-Column View"
+                aria-label="Compact 4-column layout view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Active Status Summary -->
+        <div class="gallery-status-bar" id="galleryStatusBar">
+          <span class="status-summary-text" id="statusSummaryText">Showing all 18 photos</span>
+          <button class="reset-filters-btn" id="resetFiltersBtn" style="display: none;">Reset all filters</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid layout-masonry" id="galleryGrid" aria-live="polite">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+        <!-- Empty State (When search/filters return 0 matches) -->
+        <div class="empty-state-card" id="emptyState" style="display: none;">
+          <div class="empty-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No Matching Photographs Found</h3>
+          <p class="empty-desc">
+            We couldn't find any photos matching your current query. Try adjusting your search keywords or switching
+            categories.
+          </p>
+          <button class="btn btn-secondary" id="emptyResetBtn">Clear All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED COLLECTIONS SECTION -->
+    <section class="collections-section" id="collections">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Curated Series</div>
+          <h2 class="section-title">Featured Collections</h2>
+          <p class="section-subtitle">
+            Explore dedicated visual narratives crafted around nature, architecture, and technology.
+          </p>
+        </div>
+
+        <div class="collections-grid">
+          <!-- Collection 1: Nature & Wilderness -->
+          <div class="collection-card" data-target-category="nature">
+            <div class="collection-bg">
+              <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+                alt="Pristine mountain lake surrounded by dense evergreen wilderness" class="collection-img">
+              <div class="collection-overlay"></div>
+            </div>
+            <div class="collection-content">
+              <span class="collection-badge">4 Photos &bull; Nature</span>
+              <h3 class="collection-title">Nature &amp; Wilderness</h3>
+              <p class="collection-desc">
+                From misty alpine peaks to untouched glacial waters, experience the raw grandeur and serene stillness of
+                our planet.
+              </p>
+              <button class="btn btn-sm btn-collection" data-category-link="nature">
+                <span>Explore Collection</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 2: Modern Architecture -->
+          <div class="collection-card" data-target-category="architecture">
+            <div class="collection-bg">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                alt="Futuristic curved architectural facade against a deep blue sky" class="collection-img">
+              <div class="collection-overlay"></div>
+            </div>
+            <div class="collection-content">
+              <span class="collection-badge">4 Photos &bull; Architecture</span>
+              <h3 class="collection-title">Modern Architecture</h3>
+              <p class="collection-desc">
+                Sleek geometric structures, futuristic curves, and bold urban monoliths redefining modern skyline
+                aesthetics.
+              </p>
+              <button class="btn btn-sm btn-collection" data-category-link="architecture">
+                <span>Explore Collection</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 3: Digital World -->
+          <div class="collection-card" data-target-category="technology">
+            <div class="collection-bg">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                alt="High-tech circuit board illuminated with vivid blue and cyan neon lights" class="collection-img">
+              <div class="collection-overlay"></div>
+            </div>
+            <div class="collection-content">
+              <span class="collection-badge">3 Photos &bull; Technology</span>
+              <h3 class="collection-title">Digital World</h3>
+              <p class="collection-desc">
+                Cybernetic frontiers, glowing optical circuits, and artificial intelligence architectures powering the
+                next century.
+              </p>
+              <button class="btn btn-sm btn-collection" data-category-link="technology">
+                <span>Explore Collection</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="section-tag">Behind The Lens</div>
+            <h2 class="section-title">The Philosophy of CODE ALPHA STUDIO</h2>
+            <p class="about-description">
+              CODE ALPHA STUDIO was built to elevate visual storytelling. In an era saturated with fleeting snapshots, we champion
+              deliberate, emotionally evocative photography that honors light, shadow, and architectural majesty.
+            </p>
+            <p class="about-description">
+              Every photograph in our collection undergoes rigorous aesthetic selection. From high-contrast monochrome
+              portraits to vibrant cyberpunk nightscapes, each piece is framed with cinematic clarity and boundless
+              passion.
+            </p>
+
+            <div class="about-features">
+              <div class="about-feature-item">
+                <div class="feature-icon">✨</div>
+                <div>
+                  <h4 class="feature-title">Ultra-High Dynamic Range</h4>
+                  <p class="feature-text">Mastered for high-DPI displays with vivid color accuracy and balanced
+                    exposure.</p>
+                </div>
+              </div>
+              <div class="about-feature-item">
+                <div class="feature-icon">🚀</div>
+                <div>
+                  <h4 class="feature-title">Intuitive Visual Navigation</h4>
+                  <p class="feature-text">Seamless keyboard shortcuts, fluid masonry filtering, and cinematic lightbox
+                    viewing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statistics Cards with Reliable Animated Counters -->
+          <div class="about-stats-panel">
+            <div class="stat-card" data-stat-target="25000">
+              <div class="stat-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </div>
+              <div class="stat-number-wrap">
+                <span class="stat-counter" id="counterCurated" data-target="25000">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <h3 class="stat-label">Curated Photography</h3>
+              <p class="stat-sub">Hand-selected works captured by visual artisans worldwide.</p>
+            </div>
+
+            <div class="stat-card" data-stat-target="150">
+              <div class="stat-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="stat-number-wrap">
+                <span class="stat-counter" id="counterCollections" data-target="150">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <h3 class="stat-label">Creative Collections</h3>
+              <p class="stat-sub">Thematic explorations spanning modern culture, architecture, and wilderness.</p>
+            </div>
+
+            <div class="stat-card" data-stat-target="4800000">
+              <div class="stat-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <div class="stat-number-wrap">
+                <span class="stat-counter" id="counterDiscoveries" data-target="4.8" data-decimal="true">0</span>
+                <span class="stat-suffix">M+</span>
+              </div>
+              <h3 class="stat-label">Visual Discoveries</h3>
+              <p class="stat-sub">Monthly impressions from global designers and creative visualizers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX IMAGE VIEWER (MODAL) -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Lightbox Viewer"
+    tabindex="-1">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+
+    <div class="lightbox-container">
+      <!-- Lightbox Header / Controls -->
+      <div class="lightbox-header">
+        <div class="lightbox-info">
+          <span class="lightbox-category-tag" id="lbCategory">Nature</span>
+          <h3 class="lightbox-title" id="lbTitle">Mountain Sunset</h3>
+          <span class="lightbox-author" id="lbAuthor">by Bailey Zindel</span>
+        </div>
+
+        <div class="lightbox-header-actions">
+          <!-- Image Counter -->
+          <div class="lightbox-counter-badge" id="lbCounter">
+            <span id="lbCurrentIndex">1</span> / <span id="lbTotalCount">18</span>
+          </div>
+
+          <!-- Like / Favorite Button in Lightbox -->
+          <button class="lightbox-tool-btn" id="lbFavoriteBtn" aria-label="Toggle Favorite" title="Save to Favorites">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+
+          <!-- Download / View Original Link -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="lightbox-tool-btn" id="lbDownloadBtn"
+            aria-label="Open high-resolution photo" title="Open High-Res Photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
+
+          <!-- Close Button -->
+          <button class="lightbox-tool-btn lightbox-close-btn" id="lbCloseBtn" aria-label="Close Lightbox (Esc)"
+            title="Close (Escape)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Stage -->
+      <div class="lightbox-stage">
+        <!-- Previous Button -->
+        <button class="lightbox-nav-btn prev-btn" id="lbPrevBtn" aria-label="Previous Image (Left Arrow)"
+          title="Previous (Left Arrow)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Center Image Viewport -->
+        <div class="lightbox-image-wrapper" id="lbImageWrapper">
+          <div class="lightbox-loader" id="lbLoader">
+            <div class="spinner"></div>
+          </div>
+          <img src="" alt="" class="lightbox-image" id="lbImage">
+        </div>
+
+        <!-- Next Button -->
+        <button class="lightbox-nav-btn next-btn" id="lbNextBtn" aria-label="Next Image (Right Arrow)"
+          title="Next (Right Arrow)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lightbox Footer / Caption & Keyboard Hints -->
+      <div class="lightbox-footer">
+        <p class="lightbox-description" id="lbDesc">Description text goes here</p>
+        <div class="lightbox-keyboard-hints">
+          <span><kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate</span>
+          <span><kbd>Esc</kbd> Close</span>
+          <span><kbd>L</kbd> Like</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
+    <span class="toast-icon" id="toastIcon">✓</span>
+    <span class="toast-message" id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand-logo footer-logo">
+            <span class="logo-symbol">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </span>
+            <span class="brand-name">CODE ALPHA STUDIO<span class="accent-dot">.</span></span>
+          </a>
+          <p class="footer-tagline">
+            Next-generation curated image gallery engineered by CODE ALPHA STUDIO for creative minds, photographers, and aesthetic
+            enthusiasts.
+          </p>
+          <div class="footer-socials">
+            <!-- GitHub Profile -->
+            <a href="https://github.com/thesidharthray" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-github" aria-label="GitHub Profile - thesidharthray" title="GitHub: thesidharthray">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <!-- Instagram Profile -->
+            <a href="https://www.instagram.com/sidhxrthray/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" aria-label="Instagram Profile - @sidhxrthray" title="Instagram: @sidhxrthray">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- LinkedIn Profile -->
+            <a href="https://www.linkedin.com/in/rishikesh-kumar-a03b50397/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-linkedin" aria-label="LinkedIn Profile - Rishikesh Kumar" title="LinkedIn: Rishikesh Kumar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#gallery">Interactive Gallery</a></li>
+            <li><a href="#collections">Featured Collections</a></li>
+            <li><a href="#about">About CODE ALPHA STUDIO</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#gallery" class="footer-cat-link" data-cat="nature">Nature &amp; Landscapes</a></li>
+            <li><a href="#gallery" class="footer-cat-link" data-cat="architecture">Modern Architecture</a></li>
+            <li><a href="#gallery" class="footer-cat-link" data-cat="technology">Digital &amp; Tech</a></li>
+            <li><a href="#gallery" class="footer-cat-link" data-cat="portraits">Fine Art Portraits</a></li>
+            <li><a href="#gallery" class="footer-cat-link" data-cat="travel">Global Travel</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p class="footer-newsletter-text">
+            Receive newly curated photographic releases and creative features bi-weekly.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Your email address..."
+                required aria-label="Email for newsletter">
+              <button type="submit" class="btn btn-primary btn-newsletter" aria-label="Subscribe to newsletter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="currentYear">2026</span> <strong>CODE ALPHA STUDIO</strong>. All rights reserved. Crafted for creative
+          storytellers.
+        </p>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top" title="Back to Top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+          <span class="back-to-top-text">Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
